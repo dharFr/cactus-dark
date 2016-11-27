@@ -1,51 +1,52 @@
 nav:
   Home: /
-  About: /about/
-  Writing: /archives/
-  Projects: http://github.com/probberechts
+  Archives: /blog/archives/
+  Github: http://github.com/dharFr
 
-projects_url: http://github.com/probberechts
+projects_url: https://github.com/dharFr?tab=repositories
 
 customize:
     gravatar:
-        email: 
+        email: audard@gmail.com
     logo:
         enabled: true
         width: 50
         height: 50
-        url: /images/logo.png
-        gravatar: false
-    favicon: 
+        url:
+        # url: http://www.gravatar.com/avatar/cb972f1f26bcba62452abaaae6845e6a?s=50
+        gravatar: true
+    favicon:
       # eg. generate with http://realfavicongenerator.net/
       desktop:
-        url: /images/favicon.ico
-        gravatar: false
+        url: /favicon.png
+        gravatar: true
       android:
-        url: /images/favicon-192x192.png
-        gravator: false
+        # url: /images/favicon-192x192.png
+        gravator: true
       apple:
-        url: /images/apple-touch-icon.png
-        gravator: false
+        # url: /images/apple-touch-icon.png
+        gravator: true
     social_links:
-        github: http://github.com/probberechts/cactus-dark
-        twitter: /
-        facebook: /
-        linkedin: /
+        twitter: http://twitter.com/_dhar
+        github: http://github.com/dharFr
+        linkedin: https://www.linkedin.com/in/audard
+        stack-overflow: http://stackoverflow.com/users/447446/dhar
+        dailymotion: https://www.dailymotion.com/dharfr
     post_count: 5
     highlight: rainbow
 
 # RSS
-rss: false
+rss:
 
 # Plugins
 plugins:
-    disqus_shortname: # Disqus Comments Shortname
-    google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
+    disqus_shortname: dhar
+    google_analytics: UA-1823374-1 # enter the tracking ID for your Google Analytics
 
 # Miscellaneous
 miscellaneous:
-    open_graph: # see http://ogp.me
-        fb_app_id:
-        fb_admins:
-        twitter_id:
-        google_plus:
+  open_graph: # see http://ogp.me
+    fb_app_id:
+    fb_admins:
+    twitter_id: _dhar
+    google_plus:
