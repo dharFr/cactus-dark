@@ -21,5 +21,5 @@ hexo.extend.helper.register("page_title", function () {
     title = this.__("nav.tag") + ": " + this.page.tag;
   }
 
-  return title;
+  return title + " | " + (this.page.title ? this.config.title : this.config.subtitle);
 });
