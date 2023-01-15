@@ -24,6 +24,7 @@ index:
   most_recent: Most recent
 
 post:
+  permalink: permalink
   desktop:
     previous: Previous post
     next: Next post

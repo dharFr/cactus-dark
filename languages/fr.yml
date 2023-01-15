@@ -16,6 +16,7 @@ index:
   projects: Projets
 
 post:
+  permalink: permalien
   desktop:
     previous: Article précédent
     next: Article suivant
