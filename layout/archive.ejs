@@ -1,5 +1,6 @@
 <div id="archive">
   <ul class="post-list">
+    <% var inlineContent = theme.archive.inline_content_preview %>
     <% var year = 0 %>
     <% var change = false %>
     <% var field_sort = theme.archive.sort_updated ? 'updated' : 'date' %>
@@ -10,9 +11,15 @@
       <% if (change) { %>
         <li class="post-year"><h2><%= year %></h2></li>
       <% } %>
-      <li class="post-item">
-        <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
-        <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+      <li class="post-item <%= inlineContent ? 'post-inline-content' : '' %>">
+        <% if (inlineContent) { %>
+          <span class="post-inline-title"><%- partial('_partial/post/title', { post: post, index: true, class_name: 'h1' }) %></span>
+          <%- partial('_partial/post/meta', { post: post }) %>
+          <%- partial('_partial/post/inline_content_preview', { post: post, class_name: 'post_preview' }) %>
+        <% } else { %>
+          <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
+          <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+        <% } %>
       </li>
     <% }); %>
   </ul>
