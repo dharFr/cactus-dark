@@ -1,0 +1,12 @@
+<article class="inline-content-preview" itemscope itemtype="http://schema.org/BlogPosting">	
+  <div class="content" itemprop="articleBody">
+  	<%- partial('_partial/post/gallery') %>
+	<div class="content e-content" itemprop="articleBody">
+		<% if (post.excerpt) { %>
+			<%- post.excerpt %>
+		<% } else { %>
+			<%- post.content %>
+		<% }%>
+	</div>
+   </div>
+</article>
