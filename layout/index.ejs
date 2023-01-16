@@ -45,7 +45,7 @@
     <% if (theme.posts_overview.show_all_posts) { %>
       <% var show_posts = page.posts.sort(field_sort, 'desc') %>
     <% } else { %>
-      <% var show_posts = site.posts.sort(field_sort, 'desc').limit(theme.posts_overview.post_count || 5) %>
+      <% var show_posts = site.categories.findOne({name:'articles'}).posts.sort(field_sort, 'desc').limit(theme.posts_overview.post_count || 5) %>
     <% } %>
     <% show_posts.each(function(post, i){ %>
       <li class="post-item">
