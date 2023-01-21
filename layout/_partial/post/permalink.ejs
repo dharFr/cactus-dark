@@ -2,5 +2,5 @@
 	<i class="fas fa-link"></i>
 	<a class="permalink-link" href="<%- page.permalink %>"><%= __('post.permalink') %></a>,
 	<% var shortlink = getShortLink(page.permalink) %>
-	<a class="shortlink-link" href="<%= shortlink %>"><%= __('post.shortlink') %></a>
+	<a rel="nofollow" class="shortlink-link" href="<%= shortlink %>"><%= __('post.shortlink') %></a>
 </div>
