@@ -1,6 +1,6 @@
 <div class="article-permalink">
 	<i class="fas fa-link"></i>
-	<a class="permalink-link" href="<%- page.permalink %>"><%= __('post.permalink') %></a>,
+	<a class="permalink-link u-url" href="<%- page.permalink %>"><%= __('post.permalink') %></a>,
 	<% var shortlink = getShortLink(page.permalink) %>
-	<a rel="nofollow" class="shortlink-link" href="<%= shortlink %>"><%= __('post.shortlink') %></a>
+	<a rel="nofollow" class="shortlink-link u-url" href="<%= shortlink %>"><%= __('post.shortlink') %></a>
 </div>
