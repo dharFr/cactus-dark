@@ -16,6 +16,7 @@ index:
   projects: Projets
 
 post:
+  shortlink: lien court
   permalink: permalien
   desktop:
     previous: Article précédent

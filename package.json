@@ -38,6 +38,7 @@
     "stylus-supremacy": "^2.12.2"
   },
   "dependencies": {
+    "@dhar/url-courte": "^1.0.0",
     "@fortawesome/fontawesome-free": "*",
     "clipboard": "^2.0.4",
     "jquery": "^3.3.1",

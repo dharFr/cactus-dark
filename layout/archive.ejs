@@ -16,6 +16,7 @@
           <span class="post-inline-title"><%- partial('_partial/post/title', { post: post, index: true, class_name: 'h1', hide_untitled: true }) %></span>
           <%- partial('_partial/post/meta', { post: post }) %>
           <%- partial('_partial/post/inline_content_preview', { post: post, class_name: 'post_preview' }) %>
+          <hr>
         <% } else { %>
           <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
           <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '', hide_untitled: false }) %></span>

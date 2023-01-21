@@ -1,4 +1,6 @@
 <div class="article-permalink">
 	<i class="fas fa-link"></i>
-	<a class="permalink-link" href="<%- url_for(page.path) %>"><%= __('post.permalink') %></a>
+	<a class="permalink-link" href="<%- page.permalink %>"><%= __('post.permalink') %></a>,
+	<% var shortlink = getShortLink(page.permalink) %>
+	<a class="shortlink-link" href="<%= shortlink %>"><%= __('post.shortlink') %></a>
 </div>
