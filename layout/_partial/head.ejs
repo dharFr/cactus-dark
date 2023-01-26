@@ -56,11 +56,43 @@
       <%- css('css/rtl') %>
     <% } %>
     <!-- rss -->
+    <% /* hexo-generator-feed plugin */ %>
     <% if (theme.rss === '' && config.feed && config.feed.path) { %>
       <% theme.rss = config.feed.path %>
     <% } %>
     <% if (theme.rss) { %>
       <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml" />
+    <% } %>
+    <% /* hexo-feed plugin */ %>
+    <% if (theme.rss === 'hexo-feed' && config.feed) { %>
+      <!-- Per category Feeds -->
+      <% site.categories.each(function(cat){ %>
+        <% if (cat.length) { %>
+          <% if (config.feed.rss.enable) { %>
+            <% var rssPath = `${config.feed.category_dir}${cat.name}/${config.feed.rss.output}` %>
+            <link rel="alternate" type="application/rss+xml" title="<%= cat.name %> RSS" href="<%= full_url_for(rssPath) %>" />
+          <% } %>
+          <% if (config.feed.atom.enable) { %>
+            <% var atomPath = `${config.feed.category_dir}${cat.name}/${config.feed.atom.output}` %>
+            <link rel="alternate" type="application/atom+xml" title="<%= cat.name %> Atom" href="<%= full_url_for(atomPath) %>" />
+          <% } %>
+          <% if (config.feed.jsonFeed.enable) { %>
+            <% var jsonFeedPath = `${config.feed.category_dir}${cat.name}/${config.feed.jsonFeed.output}` %>
+            <link rel="alternate" type="application/json" title="<%= cat.name %> JSON Feed" href="<%= full_url_for(jsonFeedPath) %>" />
+          <% } %>
+        <% } %>
+      <% }) %>
+
+      <!-- All categories Feeds -->
+      <% if (config.feed.rss.enable) { %> 
+      <link rel="alternate" type="application/rss+xml" title="Articles, Notes RSS" href="<%= full_url_for(config.feed.rss.output) %>" />
+      <% } %>
+      <% if (config.feed.atom.enable) { %> 
+      <link rel="alternate" type="application/atom+xml" title="Articles, Notes Atom" href="<%= full_url_for(config.feed.atom.output) %>" />
+      <% } %>
+      <% if (config.feed.jsonFeed.enable) { %>
+      <link rel="alternate" type="application/json" title="Articles, Notes JSON Feed" href="<%= full_url_for(config.feed.jsonFeed.output) %>" />
+      <% } %>
     <% } %>
 	<!-- mathjax -->
 	<% if (theme.mathjax.enabled) {%>
